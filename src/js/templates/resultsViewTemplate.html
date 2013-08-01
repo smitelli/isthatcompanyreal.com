@@ -1,0 +1,12 @@
+<% if (isError) { %>
+    <h1><%- query %> could not be scored. :(</h1>
+    <p>[Problem copy goes here.]</p>
+
+<% } else if (isRealCompany) { %>
+    <h1><%- query %> is a <em>real company</em>.</h1>
+    <p>[Real copy goes here.]</p>
+
+<% } else if (isFakeCompany) { %>
+    <h1><%- query %> is a <em>fake company</em>.</h1>
+    <p>[Fake copy goes here.]</p>
+<% } %>

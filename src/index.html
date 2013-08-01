@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Is That Company Real?</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+</head>
+
+<!-- "There are many mysteries still unsolved. I figure, you know... I'll do some of that." -->
+
+<body>
+    <header>
+        <h1>Is That Company Real?</h1>
+    </header>
+
+    <section id="lookup">
+        <section id="results"></section>
+
+        <form id="lookupForm">
+            <input type="text" value="http://google.com" autocomplete="off">
+            <input type="submit" value="Find Out!">
+        </form>
+
+        <section id="hintBox">
+            <div class="arrow"></div>
+            <div class="content">
+                We need the company's URL (or at the very least a domain name)
+                so we can perform a proper analysis!
+            </div>
+        </section>
+    </section>
+
+    <div id="bgContainer">
+        <div class="burst zero frontLayer"></div>
+        <div class="burst error"></div>
+        <div class="burst real"></div>
+        <div class="burst fake"></div>
+    </div>
+
+    <footer>
+        A contrivance by <a href="http://twitter.com/smitelli">@smitelli</a>.
+    </footer>
+
+    <script src="/js/lib/requirejs/require.js" data-main="/js/main"></script>
+</body>
+</html>
