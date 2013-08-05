@@ -38,8 +38,8 @@ define([
         },
 
         /**
-         * Validation method. A model is valid if the `query` attributes
-         * contains a string that looks plausibly like a URL or domain name.
+         * Validation method. A model is valid if the `query` attribute contains
+         * a string that looks plausibly like a URL or domain name.
          */
         validate : function(attrs, options) {
             var url = attrs.query,
@@ -51,7 +51,7 @@ define([
                 url = '//' + url;
             }
 
-            // Leverage an HTMLAnchorElement's ability to extrach a hostname
+            // Leverage an HTMLAnchorElement's ability to extract a hostname
             hostname = $('<a/>').attr('href', url).prop('hostname');
 
             // Find the TLD -- whatever's after the last period

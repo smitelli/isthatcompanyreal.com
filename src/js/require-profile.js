@@ -15,7 +15,7 @@
     // This path is relative to the `appDir` option.
     baseUrl : 'js/',
 
-    // This is where the build will created.
+    // This is where the build will be created.
     // This path is relative to this file (require-profile.js)
     dir : '../../build',
 
@@ -38,7 +38,7 @@
     // List the modules that will be optimized. All their immediate
     // and deep dependencies will be built into the main module's file.
     modules : [
-        {   // This is the bootstrap home.js module. It is the one the that is
+        {   // This is the bootstrap home.js module. It is the one that is
             // defined in the require.js script tag's `data-main` attribute
             // and is dynamically loaded by require.js.
             name : 'main'
