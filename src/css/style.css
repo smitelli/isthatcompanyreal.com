@@ -10,16 +10,18 @@ blockquote:before,blockquote:after,q:before,q:after{content:''}
 a img{border:none}
 :focus{outline:0}
 
-/* MAIN PAGE STUFF */
+/* MAIN PAGE ELEMENTS */
 header {
   padding: 100px;
   text-align: center;
 }
+
 header h1 {
   font: bold 72px Helvetica, Arial, sans-serif;
   color: #000;
   text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff;
 }
+
 footer {
   position: fixed;
   right: 0;
@@ -29,13 +31,16 @@ footer {
   font: normal 14px Helvetica, Arial, sans-serif;
   text-shadow: 1px 1px 1px #000;
 }
+
 footer a {
   text-decoration: none;
   color: #8df;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
+
 #lookup {
   margin: 0 auto;
   padding: 35px;
@@ -45,18 +50,22 @@ footer a:hover {
   text-align: center;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* INPUT FORM */
 #lookupForm {
   overflow: hidden;
   margin: 0 auto;
   width: 630px;
 }
+
 #lookupForm input {
   display: block;
   float: left;
   margin: 0;
   padding: 0;
 }
-#lookupForm input[type="text"] {
+
+#lookupForm input[type='text'] {
   padding: 0 10px;
   width: 500px;
   height: 30px;
@@ -65,7 +74,8 @@ footer a:hover {
   color: #555;
   font: normal 18px/30px Arial, Helvetica, sans-serif;
 }
-#lookupForm input[type="submit"] {
+
+#lookupForm input[type='submit'] {
   margin-left: 8px;
   width: 100px;
   height: 32px;
@@ -84,11 +94,14 @@ footer a:hover {
   background: linear-gradient(to bottom, #a2c9fe 0%,#58a0eb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2c9fe', endColorstr='#58a0eb',GradientType=0 );
 }
+
+/* HINT THROB (shows when the search input is bad) */
 #hintBox {
   display: none;
   position: absolute;
   margin-left: 105px;
 }
+
 #hintBox .arrow {
   margin-left: 30px;
   width: 0;
@@ -96,6 +109,7 @@ footer a:hover {
   border: 10px solid transparent;
   border-bottom-color: #222;
 }
+
 #hintBox .content {
   padding: 15px;
   border-radius: 10px;
@@ -106,21 +120,27 @@ footer a:hover {
   text-align: left;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* RESULTS TEXT */
 #results {
   display: none;
 }
+
 #results h1 {
   font: bold 28px/90px Helvetica, Arial, sans-serif;
 }
+
 #results h1 em {
   text-transform: uppercase;
 }
+
+body.real #results h1 em { color: #484; }
+body.fake #results h1 em { color: #844; }
+
 #results p {
   font: bold 16px Helvetica, Arial, sans-serif;
   margin-bottom: 30px;
 }
-body.real #results h1 em { color: #484; }
-body.fake #results h1 em { color: #844; }
 
 /* UNNECESSARILY COMPLICATED BACKGROUND SUNBURST */
 #bgContainer  {
@@ -132,10 +152,14 @@ body.fake #results h1 em { color: #844; }
   height: 105%;
   z-index: -10;
 }
+
+/* The page BG colors are the "lighter" tones of the sunburst */
 body       #bgContainer { background-color: #a2c9fe; }
 body.error #bgContainer { background-color: #dddddd; }
 body.real  #bgContainer { background-color: #ddffcc; }
 body.fake  #bgContainer { background-color: #fec4c7; }
+
+/* The "darker" tones of the sunburst are an SVG background image */
 #bgContainer .burst {
   display: none;
   position: absolute;
@@ -150,8 +174,12 @@ body.fake  #bgContainer { background-color: #fec4c7; }
   -webkit-transform: rotate(0deg);
   -webkit-transform-origin: center bottom;
 }
-#bgContainer .burst.frontLayer { display: block; z-index: 5;  }
+
+/* Sunburst visibility and z-ordering */
+#bgContainer .burst.frontLayer { display: block; z-index:  5; }
 #bgContainer .burst.backLayer  { display: block; z-index: -5; }
+
+/* OH GOD I AM SO SORRY :( */
 #bgContainer .burst.zero   { background-image: url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><svg width="2000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg"><style>path{stroke-width:0;fill:%2358a0eb;}</style><path d="M 1000 1000 L -448.8887394 1388.228568 L -494.2920471 1130.733614 Z"/><path d="M 1000 1000 L -494.2920471 869.2663859 L -448.8887394 611.7714323 Z"/><path d="M 1000 1000 L -359.4616806 366.0726074 L -228.7280664 139.6353455 Z"/><path d="M 1000 1000 L -60.66017178 -60.66017178 L 139.6353455 -228.7280664 Z"/><path d="M 1000 1000 L 366.0726074 -359.4616806 L 611.7714323 -448.8887394 Z"/><path d="M 1000 1000 L 869.2663859 -494.2920471 L 1130.733614 -494.2920471 Z"/><path d="M 1000 1000 L 1388.228568 -448.8887394 L 1633.927393 -359.4616806 Z"/><path d="M 1000 1000 L 1860.364655 -228.7280664 L 2060.660172 -60.66017178 Z"/><path d="M 1000 1000 L 2228.728066 139.6353455 L 2359.461681 366.0726074 Z"/><path d="M 1000 1000 L 2448.888739 611.7714323 L 2494.292047 869.2663859 Z"/><path d="M 1000 1000 L 2494.292047 1130.733614 L 2448.888739 1388.228568 Z"/></svg>'); }
 #bgContainer .burst.error  { background-image: url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><svg width="2000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg"><style>path{stroke-width:0;fill:%23a3a3a3;}</style><path d="M 1000 1000 L -448.8887394 1388.228568 L -494.2920471 1130.733614 Z"/><path d="M 1000 1000 L -494.2920471 869.2663859 L -448.8887394 611.7714323 Z"/><path d="M 1000 1000 L -359.4616806 366.0726074 L -228.7280664 139.6353455 Z"/><path d="M 1000 1000 L -60.66017178 -60.66017178 L 139.6353455 -228.7280664 Z"/><path d="M 1000 1000 L 366.0726074 -359.4616806 L 611.7714323 -448.8887394 Z"/><path d="M 1000 1000 L 869.2663859 -494.2920471 L 1130.733614 -494.2920471 Z"/><path d="M 1000 1000 L 1388.228568 -448.8887394 L 1633.927393 -359.4616806 Z"/><path d="M 1000 1000 L 1860.364655 -228.7280664 L 2060.660172 -60.66017178 Z"/><path d="M 1000 1000 L 2228.728066 139.6353455 L 2359.461681 366.0726074 Z"/><path d="M 1000 1000 L 2448.888739 611.7714323 L 2494.292047 869.2663859 Z"/><path d="M 1000 1000 L 2494.292047 1130.733614 L 2448.888739 1388.228568 Z"/></svg>'); }
 #bgContainer .burst.real   { background-image: url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><svg width="2000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg"><style>path{stroke-width:0;fill:%238be472;}</style><path d="M 1000 1000 L -448.8887394 1388.228568 L -494.2920471 1130.733614 Z"/><path d="M 1000 1000 L -494.2920471 869.2663859 L -448.8887394 611.7714323 Z"/><path d="M 1000 1000 L -359.4616806 366.0726074 L -228.7280664 139.6353455 Z"/><path d="M 1000 1000 L -60.66017178 -60.66017178 L 139.6353455 -228.7280664 Z"/><path d="M 1000 1000 L 366.0726074 -359.4616806 L 611.7714323 -448.8887394 Z"/><path d="M 1000 1000 L 869.2663859 -494.2920471 L 1130.733614 -494.2920471 Z"/><path d="M 1000 1000 L 1388.228568 -448.8887394 L 1633.927393 -359.4616806 Z"/><path d="M 1000 1000 L 1860.364655 -228.7280664 L 2060.660172 -60.66017178 Z"/><path d="M 1000 1000 L 2228.728066 139.6353455 L 2359.461681 366.0726074 Z"/><path d="M 1000 1000 L 2448.888739 611.7714323 L 2494.292047 869.2663859 Z"/><path d="M 1000 1000 L 2494.292047 1130.733614 L 2448.888739 1388.228568 Z"/></svg>'); }
