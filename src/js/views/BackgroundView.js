@@ -86,9 +86,11 @@ define([
          * 1) The 'out' layer has a z-index that places it in front. The 'in'
          *    layer has a z-index that places it in back. The 'out' layer NEVER
          *    moves during the course of the animation. The page background
-         *    color is visible through uncovered areas.
-         * 2) The 'in' layer starts its animation such that it is completely
-         *    obscured by 'out'. It rotates from 0 to `bgDeflection` degrees.
+         *    color is visible through any uncovered areas.
+         * 2) The 'in' layer starts its animation such that it is behind 'out',
+         *    completely obscured by it. The 'in' layer rotates from 0 to
+         *    `bgDeflection` degrees, peeking out from behind 'out' and covering
+         *    up the page background.
          * 3) At this point, the animation is half over. The 'in' and 'out'
          *    layers are both completely visible -- neither one is covering the
          *    other and the page background is completely obscured. The 'in' and
@@ -96,8 +98,8 @@ define([
          * 4) The 'in' layer jumps from `bgDeflection` to `-bgDeflection`
          *    degrees. The image is constructed so this jump is not visible.
          * 5) The 'in' layer rotates from `-bgDeflection` to 0 degrees. It is
-         *    now in front of the 'out' layer and it begins to cover it up while
-         *    at the same time exposing the new page background color.
+         *    now beginning to cover up the 'out' layer while simultaneously
+         *    exposing the new page background color.
          * 6) The animation completes with the 'in' layer at 0 degrees. The
          *    reset method is called and the animation is armed to run again.
          */

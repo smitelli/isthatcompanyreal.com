@@ -140,6 +140,7 @@ body.fake #results h1 em { color: #844; }
 #results p {
   font: bold 16px Helvetica, Arial, sans-serif;
   margin-bottom: 30px;
+  color: #888;
 }
 
 /* UNNECESSARILY COMPLICATED BACKGROUND SUNBURST */

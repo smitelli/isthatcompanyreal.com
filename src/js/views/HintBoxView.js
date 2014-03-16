@@ -44,7 +44,8 @@ define([
 
         /**
          * Throb animation - slowly move the box up and down. This method calls
-         * itself recursively as long as the element is visible.
+         * itself recursively as long as the element is visible. I really can't
+         * remember why I did it this way instead of using CSS animations.
          */
         _throb : function() {
             var twoPi = 2 * Math.PI;

@@ -27,7 +27,7 @@
     //optimize : 'none',
 
     // Used for filtering out matches from your build.
-    fileExclusionRegExp : /^\.|node_modules/,
+    fileExclusionRegExp : /^\./,
 
     // Finds require() dependencies inside a require() or define call.
     // This allows our bootstrap module (home.js) to have its dependencies
@@ -45,8 +45,8 @@
         }
     ],
 
-    optimize: "uglify",
-    removeCombined: true,
-    inlineText: true,
-    optimizeCss: "standard"
+    optimize       : 'uglify',
+    optimizeCss    : 'standard',
+    inlineText     : true,
+    removeCombined : true
 })

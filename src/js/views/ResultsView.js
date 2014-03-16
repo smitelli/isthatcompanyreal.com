@@ -13,6 +13,7 @@ define([
 ) {
     'use strict';
 
+    // The UX feels nicer when this happens mid-transition
     var OPEN_DELAY = defaults.transitionSpeed / 2;
 
     return Backbone.View.extend({
@@ -37,7 +38,6 @@ define([
             } else {
                 this.$el.html(this.template(this.model.toJSON()));
 
-                // The UI looks better when this happens mid-transition
                 _.delay(this._show, OPEN_DELAY);
             }
 
