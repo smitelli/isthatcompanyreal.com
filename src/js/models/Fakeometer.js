@@ -70,11 +70,15 @@ define([
         toJSON : function() {
             var json = Backbone.Model.prototype.toJSON.apply(this);
 
+            // TODO: Probably a good candidate for a view helper
             _.extend(json, {
                 isZeroState   : this.isZeroState(),
                 isError       : this.isError(),
                 isRealCompany : this.isRealCompany(),
-                isFakeCompany : this.isFakeCompany()
+                isFakeCompany : this.isFakeCompany(),
+                errorQuip     : this.getRandomQuipFor('error'),
+                realQuip      : this.getRandomQuipFor('real'),
+                fakeQuip      : this.getRandomQuipFor('fake')
             });
 
             return json;
@@ -123,6 +127,55 @@ define([
          */
         isFakeCompany : function() {
             return !this.isRealCompany();
+        },
+
+        /**
+         * Returns a random quip based on the provided mode.
+         */
+        getRandomQuipFor : function(mode) {
+            var quips = {
+                real  : [
+                    'Oh happy day!',
+                    'This is the best news I\'ve given all day!',
+                    'I am just ecstatic to be able to bring you this wonderful information!',
+                    'Now go on and seize the day!',
+                    'I can\'t wait to see what you use this data for!',
+                    'Break out the champagne and put on a festive party hat!',
+                    'What a wonderful and glorious internet this is!',
+                    'How can you beat that? Don\'t even try to, that\'s how!',
+                    'Huzzahs all around!',
+                    'I tip my hat to you, you magnificent human being!'
+                ],
+                fake  : [
+                    'Ouch, that\'s gotta hurt.',
+                    'I know, right? I was as surprised as you were.',
+                    'Who woulda thunk it?',
+                    'Wow, it\'s like my whole world has been turned upside-down.',
+                    'Win some, lose some.',
+                    'Don\'t worry, time heals all wounds.',
+                    'It could be a lot worse, though.',
+                    'Look on the bright side -- you\'ve still got me.',
+                    'This can be our little secret.',
+                    'Try not to rub it in their face though, alright?'
+                ],
+                error : [
+                    'I am so thoroughly embarrassed.',
+                    'I\'m sorry. I really am.',
+                    'I thought I could do a lot better than this.',
+                    'I have failed you. I know.',
+                    'We\'re still cool though, right?',
+                    'This usually never happens.',
+                    'To tell the truth, I don\'t think I\'ve been bringing my A-game lately.',
+                    'Damn.',
+                    'I\'ll try to be better next time.',
+                    'Man, this ain\'t my day tonight.'
+                ]
+            };
+
+            // Return a quip if we have one (otherwise return undefined)
+            if (quips[mode]) {
+                return _.sample(quips[mode]);
+            }
         }
     });
 });
