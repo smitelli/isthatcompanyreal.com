@@ -1,7 +1,7 @@
 <?php
 
   ini_set('display_errors', 0);
-  set_time_limit(5);
+  set_time_limit(2);
 
   $query = strval(@$_GET['q']);
   $score = 0;
