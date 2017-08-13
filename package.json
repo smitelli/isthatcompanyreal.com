@@ -1,0 +1,13 @@
+{
+  "name": "isthatcompanyreal.com",
+  "description": "Your one-stop shop for determining whether or not a company is real.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smitelli/isthatcompanyreal.com.git"
+  },
+  "dependencies": {
+    "requirejs": "2.3.4"
+  },
+  "devDependencies": {}
+}

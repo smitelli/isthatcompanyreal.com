@@ -7,7 +7,7 @@
   $score = 0;
 
   if ($query) {
-    require dirname(__FILE__) . '/Fakeometer.class.php';
+    require dirname(__FILE__) . '/../fakeometer/Fakeometer.class.php';
     $f = new Fakeometer();
     $score = $f->lookup($query);
   }

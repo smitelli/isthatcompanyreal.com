@@ -1,0 +1,4 @@
+build/
+node_modules/
+public/main.js
+public/style.css
