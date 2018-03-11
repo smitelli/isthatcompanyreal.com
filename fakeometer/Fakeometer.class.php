@@ -32,7 +32,7 @@
 
       // Interpret the input as a URL, then extract the hostname from it
       if (preg_match('/^[^:]+:\/\//', $url) !== 1) {
-        $url = 'http://' . $url;
+        $url = 'https://' . $url;
       }
       $hostname = parse_url($url, PHP_URL_HOST);
 
