@@ -14,7 +14,7 @@
 
   header('Cache-Control: no-cache, must-revalidate');
   header('Expires: Fri, 01 Jan 2010 00:00:00 GMT');
-  header('Content-Type: application/json');
+  header('Content-Type: application/json; charset=utf-8');
   echo json_encode(array(
     'query'   => $query,
     'score'   => $score,
